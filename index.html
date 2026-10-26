@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPI Bahasa Inggris — My Sweet Home</title>
+<style>
+:root{--navy:#20345b;--blue:#4277c7;--sky:#eaf4ff;--cream:#fff9ec;--coral:#ff8b72;--green:#2f8b67;--ink:#243047}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#eaf4ff,#fff9ec);line-height:1.55}
+header{background:var(--navy);color:white;padding:22px 18px;text-align:center} header h1{margin:4px 0;font-size:clamp(1.6rem,4vw,2.5rem)} header p{margin:4px auto;max-width:780px}
+.shell{max-width:1100px;margin:auto;padding:16px}.identity{font-size:.92rem;opacity:.9}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:14px 0 20px}
+nav button,.btn{border:0;border-radius:12px;padding:10px 14px;background:var(--blue);color:white;font-weight:700;cursor:pointer}
+nav button{background:white;color:var(--navy);border:2px solid #d4e4fb} nav button.active{background:var(--coral);color:#fff;border-color:var(--coral)}
+button:hover{filter:brightness(.97);transform:translateY(-1px)} button:focus,input:focus,select:focus,textarea:focus{outline:3px solid #f6c85f;outline-offset:2px}
+.panel{display:none;background:#fff;border-radius:22px;padding:clamp(16px,3vw,30px);box-shadow:0 8px 25px #20345b14;border:1px solid #e0eaf7;margin-bottom:18px}.panel.active{display:block}
+h2{color:var(--navy);margin-top:0} h3{color:#345b9a}.lead{font-size:1.1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.card{border:1px solid #dce8f6;border-radius:16px;padding:15px;background:#f8fbff}.emoji{font-size:2.5rem;display:block}.word{font-weight:800;color:var(--navy);font-size:1.15rem}
+.callout{background:var(--cream);border-left:5px solid var(--coral);padding:13px 16px;border-radius:10px;margin:14px 0}
+.question{border:1px solid #dce8f6;border-radius:14px;padding:14px;margin:12px 0}.question p{font-weight:700;margin:0 0 8px}
+label{display:block;margin:6px 0;cursor:pointer} input[type=radio],input[type=checkbox]{margin-right:8px}
+select,input[type=text],textarea{padding:10px;border:1px solid #bdcce0;border-radius:9px;max-width:100%;font:inherit} textarea{width:100%;min-height:90px}
+.feedback{font-weight:700;margin-top:10px}.good{color:var(--green)}.bad{color:#b44737}
+.room{background:#e8f5e9;border:3px solid #a4c8ac;border-radius:16px;padding:18px;min-height:170px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.object{background:#fff;border:1px solid #c9dfce;border-radius:12px;padding:12px;text-align:center}
+footer{text-align:center;padding:20px;color:#5b6680;font-size:.9rem}
+.progress{height:10px;background:#e3eaf4;border-radius:9px;overflow:hidden;margin:12px 0}.progress div{height:100%;width:0;background:var(--green);transition:width .3s}
+@media(max-width:600px){.room{grid-template-columns:1fr}nav button{flex:1 1 42%}}
+</style>
+</head>
+<body>
+<header>
+<div class="identity">MEDIA PEMBELAJARAN INTERAKTIF • BAHASA INGGRIS KELAS VII</div>
+<h1>🏡 My Sweet Home</h1>
+<p>Let’s explore the rooms and things in our home!</p>
+<div class="identity">Disusun untuk pembelajaran Bahasa Inggris • Andi Nuriati, S.Pd. • SMP Negeri 8 Kolaka Utara</div>
+</header>
+<div class="shell">
+<nav aria-label="Menu pembelajaran">
+<button class="active" data-target="home">🏠 Beranda</button>
+<button data-target="apersepsi">💭 Apersepsi</button>
+<button data-target="awal">📝 Asesmen Awal</button>
+<button data-target="materi">📚 Materi Pokok</button>
+<button data-target="simulasi">🎮 Simulasi</button>
+<button data-target="kuis">⭐ Kuis</button>
+<button data-target="akhir">🎯 Asesmen Akhir</button>
+<button data-target="refleksi">🌱 Refleksi</button>
+</nav>
+
+<section id="home" class="panel active">
+<h2>Welcome, students!</h2>
+<p class="lead">Selamat datang di pembelajaran <b>My Sweet Home</b>. Di sini kamu akan belajar nama ruangan, benda-benda di rumah, dan cara menjelaskan letak benda dalam bahasa Inggris.</p>
+<div class="cards">
+<div class="card"><span class="emoji">🛏️</span><b>Learn</b><br>Pelajari kosakata rumah.</div>
+<div class="card"><span class="emoji">🧩</span><b>Practice</b><br>Latihan melalui simulasi.</div>
+<div class="card"><span class="emoji">🏆</span><b>Show what you know</b><br>Kerjakan kuis dan asesmen.</div>
+</div>
+<div class="callout"><b>Tujuan pembelajaran</b><br>Setelah belajar, kamu dapat menyebutkan minimal 6 kosakata rumah, memahami prepositions of place, dan menulis 3–4 kalimat sederhana tentang rumah.</div>
+<button class="btn" onclick="go('apersepsi')">Mulai belajar →</button>
+</section>
+
+<section id="apersepsi" class="panel">
+<h2>1. Apersepsi — Let’s Talk About Home!</h2>
+<p>Perhatikan ilustrasi rumah berikut. Pikirkan rumahmu sendiri dan jawab pertanyaan pemantik secara lisan atau bersama teman.</p>
+<div class="cards">
+<div class="card"><span class="emoji">🏠</span><b>Home</b><br>A place where we live.</div>
+<div class="card"><span class="emoji">👨‍👩‍👧‍👦</span><b>Family</b><br>People who make home special.</div>
+<div class="card"><span class="emoji">❤️</span><b>Sweet</b><br>Comfortable, warm, and lovely.</div>
+</div>
+<div class="question"><p>Discuss with a friend:</p>
+<label>1. What is your favorite room at home?</label><input type="text" id="favoriteRoom" placeholder="Example: My favorite room is my bedroom.">
+<label>2. What things can you find in your home?</label><input type="text" id="homeThings" placeholder="Example: A table, chairs, and a bed.">
+</div>
+<button class="btn" onclick="go('awal')">Lanjut ke asesmen awal →</button>
+</section>
+
+<section id="awal" class="panel">
+<h2>2. Asesmen Awal — What Do You Know?</h2>
+<p>Pilih jawaban yang menurutmu benar. Ini untuk mengetahui pengetahuan awalmu, jadi kerjakan sendiri terlebih dahulu.</p>
+<div class="question"><p>1. Which one is a room in a house?</p>
+<label><input type="radio" name="pre1" value="a"> Pencil</label><label><input type="radio" name="pre1" value="b"> Kitchen</label><label><input type="radio" name="pre1" value="c"> Bicycle</label></div>
+<div class="question"><p>2. What do we usually use to sleep?</p>
+<label><input type="radio" name="pre2" value="a"> Bed</label><label><input type="radio" name="pre2" value="b"> Stove</label><label><input type="radio" name="pre2" value="c"> Sink</label></div>
+<div class="question"><p>3. “The book is on the table.” The word <i>on</i> tells us about…</p>
+<label><input type="radio" name="pre3" value="a"> Color</label><label><input type="radio" name="pre3" value="b"> Location</label><label><input type="radio" name="pre3" value="c"> Number</label></div>
+<button class="btn" onclick="checkQuiz('pre',3)">Periksa jawaban</button><div id="preResult" class="feedback" aria-live="polite"></div>
+<button class="btn" onclick="go('materi')">Pelajari materi →</button>
+</section>
+
+<section id="materi" class="panel">
+<h2>3. Materi Pokok — Rooms and Things at Home</h2>
+<p>Pelajari kosakata berikut. Klik atau baca kartu-kartu untuk mengingat nama ruangan dan benda.</p>
+<h3>Rooms in a house — Ruangan di rumah</h3>
+<div class="cards">
+<div class="card"><span class="emoji">🛋️</span><span class="word">Living room</span><br>Ruang keluarga / tamu</div>
+<div class="card"><span class="emoji">🍳</span><span class="word">Kitchen</span><br>Dapur</div>
+<div class="card"><span class="emoji">🛏️</span><span class="word">Bedroom</span><br>Kamar tidur</div>
+<div class="card"><span class="emoji">🚿</span><span class="word">Bathroom</span><br>Kamar mandi</div>
+<div class="card"><span class="emoji">🍽️</span><span class="word">Dining room</span><br>Ruang makan</div>
+<div class="card"><span class="emoji">🌳</span><span class="word">Garden</span><br>Taman</div>
+</div>
+<h3>Things at home — Benda di rumah</h3>
+<div class="cards">
+<div class="card"><span class="emoji">🪑</span><span class="word">Chair</span><br>Kursi</div>
+<div class="card"><span class="emoji">🪟</span><span class="word">Window</span><br>Jendela</div>
+<div class="card"><span class="emoji">🚪</span><span class="word">Door</span><br>Pintu</div>
+<div class="card"><span class="emoji">🛋️</span><span class="word">Sofa</span><br> Sofa</div>
+<div class="card"><span class="emoji">🧊</span><span class="word">Refrigerator</span><br>Kulkas</div>
+<div class="card"><span class="emoji">💡</span><span class="word">Lamp</span><br>Lampu</div>
+</div>
+<h3>Prepositions of place — Kata depan tempat</h3>
+<div class="cards">
+<div class="card"><span class="emoji">📘⬆️🪑</span><b>on</b><br>The book is <b>on</b> the table.</div>
+<div class="card"><span class="emoji">📘⬇️🪑</span><b>under</b><br>The bag is <b>under</b> the table.</div>
+<div class="card"><span class="emoji">📘➡️🪑</span><b>next to</b><br>The lamp is <b>next to</b> the bed.</div>
+<div class="card"><span class="emoji">📘📦</span><b>in</b><br>The clothes are <b>in</b> the cupboard.</div>
+</div>
+<div class="callout"><b>Sentence patterns</b><br>• This is my house.<br>• There is a sofa in the living room.<br>• There are two chairs in the dining room.<br>• The lamp is next to the bed.<br><small>Gunakan <b>There is</b> untuk satu benda dan <b>There are</b> untuk lebih dari satu.</small></div>
+<button class="btn" onclick="go('simulasi')">Coba simulasi →</button>
+</section>
+
+<section id="simulasi" class="panel">
+<h2>4. Simulasi — Where Is It?</h2>
+<p>Bayangkan kamu sedang melihat sebuah ruangan. Pilih benda dan lokasi yang tepat untuk membentuk kalimat.</p>
+<div class="room">
+<div class="object"><span class="emoji">🛏️</span><b>Bedroom</b><br>A bed, a lamp, and a book.</div>
+<div class="object"><span class="emoji">📘</span><b>Book</b><br>The book is on the table.</div>
+<div class="object"><span class="emoji">💡</span><b>Lamp</b><br>The lamp is next to the bed.</div>
+<div class="object"><span class="emoji">🎒</span><b>Bag</b><br>The bag is under the table.</div>
+</div>
+<div class="question"><p>Complete the sentence:</p>
+<label>The book is…</label>
+<select id="simBook"><option value="">-- Choose an answer --</option><option value="under">under the table</option><option value="on">on the table</option><option value="in">in the bathroom</option></select>
+<label>The lamp is…</label>
+<select id="simLamp"><option value="">-- Choose an answer --</option><option value="next">next to the bed</option><option value="under">under the bed</option><option value="garden">in the garden</option></select>
+<label>The bag is…</label>
+<select id="simBag"><option value="">-- Choose an answer --</option><option value="on">on the window</option><option value="under">under the table</option><option value="in">in the fridge</option></select>
+<button class="btn" onclick="checkSimulation()">Check my answers</button><div id="simResult" class="feedback" aria-live="polite"></div>
+</div>
+<button class="btn" onclick="go('kuis')">Lanjut ke kuis →</button>
+</section>
+
+<section id="kuis" class="panel">
+<h2>5. Kuis — Let’s Play!</h2>
+<p>Jawab lima pertanyaan. Setiap jawaban benar bernilai 20 poin.</p>
+<div class="question"><p>1. Where do we cook food?</p><label><input type="radio" name="q1" value="a"> Bedroom</label><label><input type="radio" name="q1" value="b"> Kitchen</label><label><input type="radio" name="q1" value="c"> Garden</label></div>
+<div class="question"><p>2. What is the English word for “jendela”?</p><label><input type="radio" name="q2" value="a"> Window</label><label><input type="radio" name="q2" value="b"> Door</label><label><input type="radio" name="q2" value="c"> Chair</label></div>
+<div class="question"><p>3. “The cat is under the table.” Where is the cat?</p><label><input type="radio" name="q3" value="a"> On the table</label><label><input type="radio" name="q3" value="b"> Beside the table</label><label><input type="radio" name="q3" value="c"> Under the table</label></div>
+<div class="question"><p>4. Choose the correct sentence.</p><label><input type="radio" name="q4" value="a"> There are a sofa.</label><label><input type="radio" name="q4" value="b"> There is a sofa.</label><label><input type="radio" name="q4" value="c"> There am a sofa.</label></div>
+<div class="question"><p>5. We usually take a shower in the…</p><label><input type="radio" name="q5" value="a"> Bathroom</label><label><input type="radio" name="q5" value="b"> Dining room</label><label><input type="radio" name="q5" value="c"> Living room</label></div>
+<button class="btn" onclick="checkQuiz('q',5)">Submit quiz</button><div id="qResult" class="feedback" aria-live="polite"></div>
+<div class="progress"><div id="qProgress"></div></div>
+<button class="btn" onclick="go('akhir')">Lanjut ke asesmen akhir →</button>
+</section>
+
+<section id="akhir" class="panel">
+<h2>6. Asesmen Akhir — Show What You Know</h2>
+<p>Kerjakan pertanyaan berikut untuk menunjukkan pemahamanmu.</p>
+<div class="question"><p>A. Choose the correct answer.</p>
+<p>1. There ___ two chairs in the dining room.</p><label><input type="radio" name="a1" value="is"> is</label><label><input type="radio" name="a1" value="are"> are</label>
+<p>2. The refrigerator is usually in the ___.</p><label><input type="radio" name="a2" value="kitchen"> kitchen</label><label><input type="radio" name="a2" value="bedroom"> bedroom</label></div>
+<div class="question"><p>B. Write 3–4 simple sentences about your home in English.</p><textarea id="writing" placeholder="Example: This is my house. There is a living room..."></textarea></div>
+<button class="btn" onclick="checkFinal()">Periksa bagian pilihan ganda</button><div id="finalResult" class="feedback" aria-live="polite"></div>
+<div class="callout"><b>Rubrik sederhana untuk tulisan</b><br>• Kosakata rumah sesuai (0–2)<br>• Kalimat mudah dipahami (0–2)<br>• Penggunaan <i>There is/There are</i> atau prepositions tepat (0–2)<br>Nilai tulisan dapat dinilai guru dengan skor maksimal 6.</div>
+<button class="btn" onclick="go('refleksi')">Lanjut ke refleksi →</button>
+</section>
+
+<section id="refleksi" class="panel">
+<h2>7. Refleksi — How Was Your Learning?</h2>
+<p>Pilih pernyataan yang paling sesuai dengan pengalaman belajarmu.</p>
+<div class="question">
+<label><input type="radio" name="reflect" value="easy"> 😊 I can name rooms and things at home easily.</label>
+<label><input type="radio" name="reflect" value="some"> 🙂 I understand some words, but I need more practice.</label>
+<label><input type="radio" name="reflect" value="help"> 🤔 I still need help with the material.</label>
+</div>
+<label for="reflectionText"><b>What did you learn today? What do you want to practice more?</b></label>
+<textarea id="reflectionText" placeholder="Today I learned... I want to practice..."></textarea>
+<button class="btn" onclick="saveReflection()">Simpan refleksi</button><div id="reflectionResult" class="feedback" aria-live="polite"></div>
+<div class="callout"><b>Great job!</b><br>Keep practicing English by describing the rooms and objects in your own home. See you next lesson!</div>
+<button class="btn" onclick="go('home')">↺ Kembali ke beranda</button>
+</section>
+</div>
+<footer>MPI My Sweet Home • Bahasa Inggris Kelas VII • SMP Negeri 8 Kolaka Utara</footer>
+<script>
+const buttons=[...document.querySelectorAll('nav button')];
+function go(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));buttons.forEach(b=>b.classList.toggle('active',b.dataset.target===id));window.scrollTo({top:0,behavior:'smooth'});}
+buttons.forEach(b=>b.addEventListener('click',()=>go(b.dataset.target)));
+function checkQuiz(prefix,n){
+ const key=prefix==='pre'?{pre1:'b',pre2:'a',pre3:'b'}:{q1:'b',q2:'a',q3:'c',q4:'b',q5:'a'};
+ let score=0,answered=0;
+ for(let i=1;i<=n;i++){let name=prefix+i;let chosen=document.querySelector('input[name="'+name+'"]:checked');if(chosen){answered++;if(chosen.value===key[name])score++;}}
+ const target=document.getElementById(prefix==='pre'?'preResult':'qResult');
+ if(answered<n){target.className='feedback bad';target.textContent='Kamu menjawab '+answered+' dari '+n+' pertanyaan. Lengkapi semua jawaban untuk melihat hasil.';return;}
+ const points=Math.round(score/n*100);target.className='feedback '+(points>=60?'good':'bad');target.textContent='Skor: '+points+'/100 ('+score+' dari '+n+' benar). '+(points>=80?'Excellent!':points>=60?'Good effort! Review materi yang masih sulit.':'Keep practicing! Baca kembali materi lalu coba lagi.');
+ if(prefix==='q')document.getElementById('qProgress').style.width=points+'%';
+}
+function checkSimulation(){
+ const a=document.getElementById('simBook').value==='on',b=document.getElementById('simLamp').value==='next',c=document.getElementById('simBag').value==='under';
+ const score=[a,b,c].filter(Boolean).length;let el=document.getElementById('simResult');el.className='feedback '+(score===3?'good':'bad');el.textContent='Hasil: '+score+'/3 benar. '+(score===3?'Wonderful! Semua lokasi tepat.':'Perhatikan kembali contoh lokasi benda pada materi, lalu coba lagi.');
+}
+function checkFinal(){
+ let a=document.querySelector('input[name="a1"]:checked'),b=document.querySelector('input[name="a2"]:checked');let el=document.getElementById('finalResult');
+ if(!a||!b){el.className='feedback bad';el.textContent='Silakan jawab kedua pertanyaan pilihan ganda terlebih dahulu.';return;}
+ let score=(a.value==='are'?1:0)+(b.value==='kitchen'?1:0);el.className='feedback '+(score===2?'good':'bad');el.textContent='Pilihan ganda: '+score+'/2 benar. '+(score===2?'Excellent!':'Baca kembali materi dan periksa penggunaan There are serta nama ruangan.');
+}
+function saveReflection(){
+ const choice=document.querySelector('input[name="reflect"]:checked'),text=document.getElementById('reflectionText').value.trim(),el=document.getElementById('reflectionResult');
+ if(!choice&&!text){el.className='feedback bad';el.textContent='Pilih satu pernyataan atau tulis refleksimu terlebih dahulu.';return;}
+ el.className='feedback good';el.textContent='Refleksi selesai ditulis. Terima kasih sudah merefleksikan pembelajaranmu! (Catatan ini hanya tersimpan selama halaman terbuka.)';
+}
+</script>
+</body></html>
